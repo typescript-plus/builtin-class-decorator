@@ -2,6 +2,8 @@
 
 A TypeScript class decorator for extending builtin classes in ES5.
 
+[![CircleCI](https://circleci.com/gh/typescript-plus/builtin-class-decorator.svg?style=svg)](https://circleci.com/gh/typescript-plus/builtin-class-decorator)
+
 ## Install
 
 ```bash
