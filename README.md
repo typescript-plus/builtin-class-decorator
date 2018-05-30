@@ -17,7 +17,7 @@ With Builtin Class Decorator, you can simply do it.
 ## Usage
 
 ```ts
-import { BuiltinClass } from 'builtin-class-decorator';
+import { BuiltinClass } from '@typescript-plus/-class-decorator';
 
 @BuiltinClass()
 class SpecialError extends Error {
