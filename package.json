@@ -1,7 +1,7 @@
 {
   "name": "@typescript-plus/builtin-class-decorator",
   "version": "0.1.0",
-  "description": "A TypeScript class decorator for extending builtin ES5 classes.",
+  "description": "A TypeScript class decorator for extending builtin classes in ES5.",
   "license": "MIT",
   "author": "mosop",
   "files": [
