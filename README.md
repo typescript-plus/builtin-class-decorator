@@ -1,6 +1,6 @@
 # Builtin Class Decorator
 
-A TypeScript class decorator for extending builtin ES5 classes.
+A TypeScript class decorator for extending builtin classes in ES5.
 
 ## Install
 
