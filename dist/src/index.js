@@ -10,10 +10,18 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+var E = /** @class */ (function (_super) {
+    __extends(E, _super);
+    function E() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return E;
+}(Error));
+exports.UNNEEDED = new E() instanceof E;
 function BuiltinClass() {
     // tslint:disable-next-line:arrow-return-shorthand
     return function (constructor) {
-        return /** @class */ (function (_super) {
+        return exports.UNNEEDED ? constructor : /** @class */ (function (_super) {
             __extends(class_1, _super);
             function class_1() {
                 var _newTarget = this.constructor;
