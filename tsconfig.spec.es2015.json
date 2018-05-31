@@ -1,0 +1,15 @@
+{
+  "extends": "./config/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "build",
+    "target": "es2015"
+  },
+  "include": [
+    "spec/*.ts",
+    "spec/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

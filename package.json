@@ -1,7 +1,8 @@
 {
   "name": "@typescript-plus/builtin-class-decorator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A TypeScript class decorator for extending builtin classes in ES5.",
+  "repository": "typescript-plus/builtin-class-decorator",
   "license": "MIT",
   "author": "mosop",
   "files": [
@@ -15,8 +16,10 @@
     "dist:clean": "rm -rf dist",
     "doc": "typedoc --mode file --excludeNotExported --out docs/api src",
     "lint": "tslint -p . -t verbose",
-    "test": "ts-node node_modules/jasmine/bin/jasmine 'spec/**/*.spec.ts'",
-    "posttest": "npm run lint"
+    "test": "npm-run-all test:*",
+    "posttest": "npm run lint",
+    "test:es2015": "ts-node -P tsconfig.spec.es2015.json node_modules/jasmine/bin/jasmine 'spec/**/*.spec.ts'",
+    "test:es5": "ts-node -P tsconfig.spec.es5.json node_modules/jasmine/bin/jasmine 'spec/**/*.spec.ts'"
   },
   "devDependencies": {
     "@types/jasmine": "^2.8.7",
