@@ -1,6 +1,6 @@
 {
   "name": "@typescript-plus/builtin-class-decorator",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A TypeScript class decorator for extending builtin classes in ES5.",
   "repository": "typescript-plus/builtin-class-decorator",
   "license": "MIT",
@@ -8,20 +8,22 @@
   "files": [
     "dist"
   ],
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dist": "npm-run-all dist:clean dist:build",
     "dist:build": "tsc -p tsconfig.dist.json",
     "dist:clean": "rm -rf dist",
     "doc": "typedoc --mode file --excludeNotExported --out docs/api src",
-    "lint": "tslint -p . -t verbose",
+    "lint": "tslint -p . -t verbose && tslint -p . -c node_modules/@myowncake/config-tslint/dist/tslint.no-unused-variable.json -t verbose",
     "test": "npm-run-all test:*",
     "posttest": "npm run lint",
     "test:es2015": "ts-node -P tsconfig.spec.es2015.json node_modules/jasmine/bin/jasmine 'spec/**/*.spec.ts'",
     "test:es5": "ts-node -P tsconfig.spec.es5.json node_modules/jasmine/bin/jasmine 'spec/**/*.spec.ts'"
   },
   "devDependencies": {
+    "@myowncake/config-tslint": "^0.1.0",
+    "@myowncake/config-typescript": "^0.1.0",
     "@types/jasmine": "^2.8.7",
     "@types/node": "^8.10.17",
     "@types/tmp": "0.0.33",

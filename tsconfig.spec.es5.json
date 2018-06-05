@@ -1,14 +1,11 @@
 {
-  "extends": "./config/tsconfig.json",
+  "extends": "./node_modules/@myowncake/config-typescript/dist/tsconfig.es5.general.json",
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "build"
+    "outDir": "build",
+    "rootDir": "."
   },
   "include": [
     "spec/*.ts",
     "spec/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
   ]
 }
