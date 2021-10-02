@@ -1,13 +1,14 @@
 {
-  "extends": "./node_modules/@myowncake/config-typescript/dist/tsconfig.es5.general.json",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/tsconfig.json",
+  "extends": "./node_modules/@myowncake/config/dist/tsconfig.general.json",
   "compilerOptions": {
+    "rootDir": ".",
     "outDir": "build",
-    "rootDir": "."
+    "module": "CommonJS",
+    "target": "ES5"
   },
   "include": [
     "src/*.ts",
-    "src/**/*.ts",
-    "spec/*.ts",
-    "spec/**/*.ts"
+    "src/**/*.ts"
   ]
 }

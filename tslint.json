@@ -1,5 +1,0 @@
-{
-  "$schema": "http://json.schemastore.org/tslint",
-  "extends": "./node_modules/@myowncake/config-tslint/dist/tslint.general.json",
-  "rules": {}
-}

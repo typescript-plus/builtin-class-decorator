@@ -1,28 +1,24 @@
 class E extends Error {}
 export const UNNEEDED = new E() instanceof E;
 
-// tslint:disable-next-line:ban-types
+// eslint-disable-next-line @typescript-eslint/ban-types,@typescript-eslint/no-explicit-any
 export type AbstractConstructorType = Function & { prototype: any };
-export interface ConcreteConstructorType {
-  new (...args: any[]): {};
-}
+// eslint-disable-next-line @typescript-eslint/ban-types,@typescript-eslint/no-explicit-any
+export type ConcreteConstructorType = new (...args: any[]) => {};
 export type ConstructorType = AbstractConstructorType | ConcreteConstructorType;
 
-// tslint:disable-next-line:variable-name
-export const BuiltinClass = () => {
-  // tslint:disable-next-line:arrow-return-shorthand
-  return <T extends ConstructorType>(constructor: T) => {
-    const concrete = constructor as ConcreteConstructorType;
-    return UNNEEDED
-      ? constructor
-      : // tslint:disable-next-line:max-classes-per-file
-        (class extends concrete {
-          constructor(...args: any[]) {
-            // tslint:disable-next-line:no-inferred-empty-object-type
-            super(...args);
-            // tslint:disable-next-line:no-unsafe-any
-            Object.setPrototypeOf(this, new.target.prototype);
-          }
-        } as T);
+export function BuiltinClass() {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  return function <T extends ConstructorType>(constructor: T) {
+    if (UNNEEDED) {
+      return constructor;
+    }
+    return class extends (constructor as ConcreteConstructorType) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      constructor(...args: any[]) {
+        super(...args);
+        Object.setPrototypeOf(this, new.target.prototype);
+      }
+    } as T;
   };
-};
+}
