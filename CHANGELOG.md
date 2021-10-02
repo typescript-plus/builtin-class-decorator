@@ -7,6 +7,12 @@ Based on [Keep a Changelog] and [Semantic Versioning Caret].
 
 * Nothing yet.
 
+## [0.3.1]
+
+### Fixed
+
+* fixed wrong NPM publication on 0.3.0.
+
 ## [0.3.0]
 
 ### Changed
