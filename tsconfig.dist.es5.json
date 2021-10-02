@@ -2,13 +2,13 @@
   "$schema": "https://schemastore.azurewebsites.net/schemas/json/tsconfig.json",
   "extends": "./node_modules/@myowncake/config/dist/tsconfig.general.json",
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "build",
+    "rootDir": "src",
+    "outDir": "dist",
     "module": "CommonJS",
-    "target": "ES2020"
+    "target": "ES5"
   },
-  "include": [
-    "spec/*.ts",
-    "spec/**/*.ts"
+  "files": [
+    "src/index.ts",
+    "src/es5/index.ts"
   ]
 }

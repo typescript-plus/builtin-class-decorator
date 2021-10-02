@@ -1,4 +1,7 @@
-import { BuiltinClass } from '../src';
+import { Es5BuiltinClass, Es6BuiltinClass } from '../src';
+import { TARGET } from './helper';
+
+const BuiltinClass = TARGET == 'es5' ? Es5BuiltinClass : Es6BuiltinClass;
 
 @BuiltinClass()
 class SpecialError extends Error {

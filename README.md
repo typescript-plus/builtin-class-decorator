@@ -19,9 +19,9 @@ With Builtin Class Decorator, you can simply do it.
 ## Usage
 
 ```ts
-import { BuiltinClass } from '@typescript-plus/-class-decorator';
+import { Es5BuiltinClass } from '@typescript-plus/builtin-class-decorator';
 
-@BuiltinClass()
+@Es5BuiltinClass()
 class SpecialError extends Error {
   constructor() {
     super();

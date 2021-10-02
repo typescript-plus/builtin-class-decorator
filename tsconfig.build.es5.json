@@ -2,13 +2,15 @@
   "$schema": "https://schemastore.azurewebsites.net/schemas/json/tsconfig.json",
   "extends": "./node_modules/@myowncake/config/dist/tsconfig.general.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
+    "rootDir": ".",
     "module": "CommonJS",
-    "target": "ES5"
+    "target": "ES5",
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo.build.es5",
+    "allowJs": false,
+    "checkJs": false
   },
-  "include": [
-    "src/*.ts",
-    "src/**/*.ts"
+  "files": [
+    "src/es5/index.ts"
   ]
 }

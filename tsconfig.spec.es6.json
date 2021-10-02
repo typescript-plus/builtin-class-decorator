@@ -3,11 +3,11 @@
   "extends": "./node_modules/@myowncake/config/dist/tsconfig.general.json",
   "compilerOptions": {
     "rootDir": ".",
-    "outDir": "build/es5",
+    "outDir": "build/es6",
     "module": "CommonJS",
-    "target": "ES5",
+    "target": "ES6",
     "incremental": true,
-    "tsBuildInfoFile": ".tsbuildinfo.spec.es5"
+    "tsBuildInfoFile": ".tsbuildinfo.spec.es6"
   },
   "files": [
     "src/index.ts"
